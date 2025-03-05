@@ -153,9 +153,9 @@ class DeploymentsManager {
         }
         return {
             description: packageVersion.packageInfo.description,
-            isDisabled: false,
+            isDisabled: packageVersion.packageInfo.is_disabled,
             isMandatory: packageVersion.packageInfo.is_mandatory === 1,
-            rollout: 100,
+            rollout: packageVersion.packageInfo.rollout,
             appVersion: packageVersion.deploymentsVersions.app_version,
             packageHash: packageVersion.packageInfo.package_hash,
             blobUrl: getBlobDownloadUrl(packageVersion.packageInfo.blob_url),
